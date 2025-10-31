@@ -9,15 +9,15 @@ var renderCount = 0;
 switch (formPage) {
   case "boarding-offer": 
     submitText = "Book Your Free Night"; 
-    removeList = {'returning_customer':'input', 'time':'input'};
+    removeList = {'returning_customer':'input', 'time':'input', 'comments':'textarea'};
     break;
   case "grooming-offer": 
     submitText = "Book To Get 10% Off";  
-    removeList = {'returning_customer':'input'};
+    removeList = {'returning_customer':'input', 'duration':'input', 'comments':'textarea'};
     break;
   case "daycare-offer":  
     submitText = "Book My Free Day";     
-    removeList = {'returning_customer':'input', 'comments':'textarea'};
+    removeList = {'returning_customer':'input', 'duration':'input', 'comments':'textarea'};
     break;
   default: //Regular old contact form
     removeList = {'date':'input', 'time':'input', 'duration':'input'};    
@@ -71,7 +71,8 @@ function checkForGingrForm() {
         const uselessField = document.querySelector(QS);
         console.debug('Seeking '+QS);
         if (uselessField) {
-          uselessField.remove();
+          //uselessField.remove();
+          uselessField.setAttribute("style","display: none;");
           console.debug('Removed '+iFieldName);
         }
       }
@@ -107,7 +108,7 @@ function checkForGingrForm() {
         console.debug("Datepicker added.");
       }
 
-      let pageField = document.querySelector("input[name='from']");
+      let pageField = document.querySelector("input[name='formpage']");
       if (pageField) {
         pageField.value = formPage;
         console.debug("Page path added.");
