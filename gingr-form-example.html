@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <script type="text/javascript" src="https://storage.googleapis.com/gingr-embeddable/assets/js/bundle.js"></script>
+  <script type="text/javascript" src="gingrutm.js"></script>
+  <style>
+body { text-align: center; color: navy; background-color: burlywood; font-family: sans-serif; }
+main { margin: 0 200px; padding: 20px 40px; background-color: darkgoldenrod; }
+
+.random { margin: 40px; border: 10px solid gold; padding: 20px 40px; background-color: goldenrod;}
+.gingrScope { width: 60%; margin: 0 20%; textarea, input { border-radius: 10px !important; } }
+
+.gingrScope .btn-primary {
+  margin-top: 5px;
+  background-color: #5BC8AC;
+  padding: 16px 28px 16px 28px;
+  border-radius: 10px;
+  color: #FFF !important;
+  border-color: #FFF;
+  line-height: 15px;
+}
+
+.gingrScope .form-group { margin: 0; }
+
+.gingrScope .text-right { text-align: center; }
+
+.react-form-builder-form .rfb-item {
+  padding: 8px 14px 8px 0;
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  
+  label { display: none; }
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="email"],
+  input[type="number"],
+  input[type="telephone"] { height: 50px !important; }
+  
+  input[name='formpage'],
+  &:has(input[name='formpage']) { 
+    width: 1px; height: 1px; overflow: hidden; opacity: 0;
+  }
+  
+ &:has(textarea) { display: block; width: 100%; }
+ 
+ &:has(input[type='radio']) { 
+     display: block;
+     width: 100%;
+     label { display: block; }
+     label.radio-label { display: inline-block; padding-right: 20px; }
+ }
+}    
+  </style>
+</head>
+<body>
+<h1>Multi GingrForm Test</h1>
+<main>
+  <div class="random">
+    <h2>Default GingrApp Demo</h2>
+    <script>addGingr();</script>
+  </div>
+  <div id="middle" class="random">
+    <h2>Specific CompanyID</h2>
+    <script>addGingr('growlerz');</script>
+  </div>
+  <div class="random">
+    <h2>Redirect to a Thank-You page upon submit</h2>
+    <script>addGingr('demo','https://x.com');</script>
+  </div>
+</main>
+</script>
+</body>
+</html>
