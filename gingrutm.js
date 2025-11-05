@@ -39,6 +39,7 @@ const visibleFileds = {
   'cell_phone'  : 'Mobile Number',
   'animal_names': 'Pet Name(s)',
   'pet_breed'   : 'Pet Breed(s)',
+  'date'        : 'Desired Date',
   'time'        : 'Desired Time',
   'duration'    : 'Number of Nights',
 };
@@ -92,8 +93,9 @@ function gingrFormReady(formHash) {
     }  
     
     let dateField = document.querySelector('.form'+formHash+" input[name='date']");
-    if (dateField) {
-      dateField.setAttribute("type","date");
+    if (dateField) { //Switch on datepicker on focus to allow placeholder to show
+      dateField.onfocus = function() { dateField.setAttribute("type","date"); }
+      dateField.onblur  = function() { dateField.setAttribute("type","text"); }
       console.debug("Datepicker added on form #"+formHash);
     }
 
