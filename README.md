@@ -4,15 +4,24 @@ GingrApp is a CRM for pet kenneling industry: https://gingrapp.com
 While the app itself is comprehensive their form building tool is basic. 
 This is a utility to add UTM parameters and placeholder texts to GingrApp lead forms.
 
-# Usage
+## Usage
 
-Most basic usage adds GingerApp's generic demo from: addGingr();
+Most basic usage adds GingerApp's generic demo from by calling addGingr();
 
-Most commom usage for paying customers: addGingr('YourGingerID');
+Most commom usage for paying customers: 
+```javascript
+addGingr('YourGingerID');
+```
 
-Send user to a thank you page after submit: addGingr('demo', 'https://x.com');
+Send user to a thank you page after submit: 
+```javascript
+addGingr('demo', 'https://x.com');
+```
 
-Load a specific lead form:  addGingr('YourGingerID', '', 'desired_form');
+Load a specific lead form:  
+```javascript
+addGingr('YourGingerID', '', 'desired_form');
+```
 
 See the included HTML for a working example.
 
